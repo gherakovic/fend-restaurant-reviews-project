@@ -151,7 +151,7 @@ class DBHelper {
     *restaurant.id.
     */
    static imageUrlForRestaurant(restaurant) {
-     let url = `/img/${(restaurant.photograph||restaurant.id)}-medium.jpg`;
+     let url = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}-medium.jpg`;
      return url;
    }
 
@@ -159,7 +159,7 @@ class DBHelper {
     * Restaurant srcset attribute for browser to decide best *resolution. It uses restaurant.photograph and if former is *missing, will use restaurant.id.
     */
    static imageSrcsetForRestaurant(restaurant) {
-     const imageSrc = `/img/${(restaurant.photograph||restaurant.id)}`;
+     const imageSrc = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}`;
      return `${imageSrc}-small.jpg 300w,
              ${imageSrc}-medium.jpg 600w,
              ${imageSrc}-large.jpg 800w`;
