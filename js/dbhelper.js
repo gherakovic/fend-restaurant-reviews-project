@@ -150,25 +150,26 @@ class DBHelper {
     * Restaurant image URL. Defaults to medium sized image using  *restaurant.photograph. If former is missing, it will use
     *restaurant.id.
     */
-   static imageUrlForRestaurant(restaurant) {
-     let url = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}-medium.jpg`;
-     return url;
-   }
+    static imageUrlForRestaurant(restaurant) {
+    let url = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}-medium.jpg`;
+    return url;
+  }
 
    /**
     * Restaurant srcset attribute for browser to decide best *resolution. It uses restaurant.photograph and if former is *missing, will use restaurant.id.
     */
-   static imageSrcsetForRestaurant(restaurant) {
-     const imageSrc = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}`;
-     return `${imageSrc}-small.jpg 300w,
-             ${imageSrc}-medium.jpg 600w,
-             ${imageSrc}-large.jpg 800w`;
-   }
+    static imageSrcsetForRestaurant(restaurant) {
+        const imageSrc = `/img/${(restaurant.photograph.split('.')[0]||restaurant.id)}`;
+        return `${imageSrc}-small.jpg 300w,
+                ${imageSrc}-medium.jpg 600w,
+                ${imageSrc}-large.jpg 800w`;
+    }
+
 
    /**
     * Restaurant sizes attribute so browser knows image sizes *before deciding what image to download.
     */
-   static imageSizesForRestaurant(restaurant) {
+    static imageSizesForRestaurant(restaurant) {
      return `(max-width: 360px) 280px,
              (max-width: 600px) 600px,
              400px`;
