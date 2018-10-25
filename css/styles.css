@@ -196,16 +196,17 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+  height: 70vw;
+  position: static;
+  margin-top: 100px;
+  width: 100%;
 }
 .inside #map {
   background-color: #ccc;
   height: 100%;
   width: 100%;
+	max-height: none;
+	z-index: 1;
 }
 .inside #footer {
   bottom: 0;
@@ -242,10 +243,9 @@ nav h1 a {
 	width: 90%;
 }
 #restaurant-container, #reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
+  box-sizing: border-box;
+  padding: 25px 25px 0px;
+  width: 100%;
 }
 #reviews-container {
   padding: 30px 40px 80px;
@@ -263,14 +263,15 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 0;
   position: relative;
-  width: 85%;
+  width: 100%;
+	box-sizing: border-box;
 }
 #reviews-list li p {
   margin: 0 0 10px;
@@ -279,19 +280,15 @@ nav h1 a {
   color: #666;
 }
 
-/* ====================== Media Queries Stylings ====================== */
-@media screen and (max-width: 349px) {
-
+/* ====================== Skip to Filter Options Details ====================== */
+.skip-link {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: -1000px;
+    background-color: white;
+    padding: 5px 10px;
 }
-
-@media screen and (min-width: 350px) and (max-width: 649px) {
-
-}
-
-@media screen and (min-width: 650px) {
-
-}
-
-@media screen and (min-width: 799px) {
-
+.skip-link:focus {
+    left: 15px;
 }
