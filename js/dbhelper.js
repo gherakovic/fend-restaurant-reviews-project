@@ -200,4 +200,12 @@ class DBHelper {
     return marker;
   } */
 
+  static mapOffline() {
+   const map = document.getElementById('map');
+   map.className = "map-offline";
+   map.innerHTML = `<div class="warning-icon">!</div>
+   <div class="warning-message">So sorry! We're having problems loading maps</div>
+   <div class="warning-suggestion">Perhaps you're offline? If you need to see a map, please check back later.</div>`;
+ }
+
 }

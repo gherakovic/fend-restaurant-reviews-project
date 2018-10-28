@@ -66,6 +66,10 @@ nav h1 a {
   letter-spacing: 10px;
   text-transform: uppercase;
 }
+nav h1 a:hover,
+nav h1 a:focus {
+	color: #ff4500;
+}
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
@@ -126,10 +130,14 @@ nav h1 a {
   font-family: Arial,sans-serif;
   font-size: 11pt;
   height: 35px;
-  letter-spacing: 0;
-  margin: 10px;
+  letter-spacing: 0px;
+  margin: 15px 0;
   padding: 0 10px;
-  width: 200px;
+  width: 100%;
+}
+.filter-options select:hover,
+.filter-options select:focus {
+	background-color: ##87cefa;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -141,6 +149,8 @@ nav h1 a {
   text-align: center;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
+	box-sizing: border-box;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -156,9 +166,7 @@ nav h1 a {
   background-color: #ccc;
   display: block;
   margin: 0;
-  max-width: 100%;
-  min-height: 248px;
-  min-width: 100%;
+  width: 100%;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -186,7 +194,10 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
-
+#restaurants-list li a:hover,
+#restaurants-list li a:focus {
+	background-color: #ff0000;
+}
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -208,11 +219,6 @@ nav h1 a {
 	max-height: none;
 	z-index: 1;
 }
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
-}
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -224,7 +230,7 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -240,7 +246,7 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #restaurant-container, #reviews-container {
   box-sizing: border-box;
@@ -248,7 +254,7 @@ nav h1 a {
   width: 100%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding: 8px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -274,13 +280,14 @@ nav h1 a {
 	box-sizing: border-box;
 }
 #reviews-list li p {
-  margin: 0 0 10px;
+  margin: 0;
+	padding: 10px;
 }
 #restaurant-hours td {
   color: #666;
 }
 
-/* ====================== Skip to Filter Options Details ====================== */
+/* ================ Skip to Filter Options Details ================== */
 .skip-link {
     display: block;
     position: absolute;
@@ -291,4 +298,35 @@ nav h1 a {
 }
 .skip-link:focus {
     left: 15px;
+}
+
+/* Offline maps warning */
+.map-offline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+}
+.map-offline div {
+  margin-left: 45px;
+  margin-right: 45px;
+}
+.map-offline .warning-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #ff4500;
+  font-size: 2.5em;
+  color: white;
+  margin: 0 30px 30px;
+}
+.map-offline .warning-message {
+  font-size: 1.3em;
+}
+.map-offline .warning-suggestion {
+  font-size: .9em;
 }
